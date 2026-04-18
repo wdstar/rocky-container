@@ -1,0 +1,14 @@
+version: '2'
+services:
+  rocky-system: 
+    container_name: rocky
+    build:
+      context: .
+      dockerfile: Dockerfile
+    privileged: true
+    command: /usr/sbin/init
+    ports:
+      - "127.0.0.1:3022:22"
+    volumes:
+      - "./home:/home"
+
